@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSA43 Assessment Tool 3</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#0f172a,#1e3a8a,#0ea5e9);
+color:white;
+padding:30px;
+}
+
+h1{
+text-align:center;
+margin-bottom:40px;
+}
+
+.card{
+background:rgba(255,255,255,0.08);
+padding:25px;
+border-radius:15px;
+margin-bottom:30px;
+backdrop-filter:blur(10px);
+box-shadow:0 10px 20px rgba(0,0,0,.3);
+}
+
+.card h2{
+margin-bottom:15px;
+color:#7dd3fc;
+}
+
+.options div{
+padding:12px;
+margin:8px 0;
+background:#1e293b;
+border-radius:8px;
+}
+
+.correct{
+background:#16a34a!important;
+}
+
+.answer{
+margin-top:20px;
+padding:15px;
+background:#0f766e;
+border-radius:10px;
+}
+
+video{
+width:100%;
+margin-top:15px;
+border-radius:10px;
+}
+
+form{
+display:grid;
+gap:15px;
+margin-top:20px;
+}
+
+input{
+padding:12px;
+border:none;
+border-radius:8px;
+}
+
+button{
+padding:12px;
+background:#2563eb;
+color:white;
+border:none;
+border-radius:8px;
+cursor:pointer;
+}
+
+button:hover{
+background:#1d4ed8;
+}
+
+.sampleNav{
+display:flex;
+gap:25px;
+justify-content:center;
+margin-top:20px;
+background:#111827;
+padding:15px;
+border-radius:10px;
+}
+
+.sampleNav a{
+color:white;
+text-decoration:none;
+font-weight:bold;
+}
+
+.sampleNav a:hover{
+color:#38bdf8;
+}
+
+pre{
+background:#111827;
+padding:15px;
+border-radius:10px;
+margin-top:10px;
+overflow:auto;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+margin-top:20px;
+}
+
+table,th,td{
+border:1px solid white;
+}
+
+th,td{
+padding:10px;
+text-align:center;
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>CSA43 - Internet Programming Assessment Tool 3</h1>
+
+<!-- Question 1 -->
+
+<div class="card">
+
+<h2>Question 1 - HTML Video Tag</h2>
+
+<p><b>Choose the correct HTML tag for video embedding.</b></p>
+
+<div class="options">
+<div>A. &lt;media src="video.mp4"&gt;&lt;/media&gt;</div>
+<div class="correct">B. &lt;video src="video.mp4" controls&gt;&lt;/video&gt;</div>
+<div>C. &lt;movie src="video.mp4"&gt;&lt;/movie&gt;</div>
+<div>D. &lt;vid src="video.mp4"&gt;&lt;/vid&gt;</div>
+</div>
+
+<div class="answer">
+
+<b>Answer:</b> Option B
+
+<br><br>
+
+The <b>&lt;video&gt;</b> tag is the official HTML5 element used to embed videos.
+
+</div>
+
+<video controls autoplay muted loop>
+
+<source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+
+</video>
+
+</div>
+
+<!-- Question 2 -->
+
+<div class="card">
+
+<h2>Question 2 - HTTP Method</h2>
+
+<p><b>Select the correct HTTP method.</b></p>
+
+<div class="options">
+
+<div>GET</div>
+
+<div class="correct">POST</div>
+
+<div>PUT</div>
+
+<div>DELETE</div>
+
+</div>
+
+<div class="answer">
+
+<b>Answer:</b> POST
+
+<br><br>
+
+POST sends user information inside the request body, making it suitable for registration forms.
+
+</div>
+
+<form method="POST">
+
+<input type="text" placeholder="Full Name">
+
+<input type="email" placeholder="Email">
+
+<input type="password" placeholder="Password">
+
+<button type="submit">Register</button>
+
+</form>
+
+</div>
+
+<!-- Question 3 -->
+
+<div class="card">
+
+<h2>Question 3 - Semantic Navigation</h2>
+
+<p><b>Choose the semantic navigation element.</b></p>
+
+<div class="options">
+
+<div>&lt;div&gt;</div>
+
+<div class="correct">&lt;nav&gt;</div>
+
+<div>&lt;section&gt;</div>
+
+<div>&lt;header&gt;</div>
+
+</div>
+
+<div class="answer">
+
+<b>Answer:</b> &lt;nav&gt;
+
+<br><br>
+
+The NAV element represents the navigation links of a website.
+
+</div>
+
+<nav class="sampleNav">
+
+<a href="#">Home</a>
+
+<a href="#">About</a>
+
+<a href="#">Services</a>
+
+<a href="#">Contact</a>
+
+</nav>
+
+</div>
+
+<!-- Question 4 -->
+
+<div class="card">
+
+<h2>Question 4 - XML Syntax</h2>
+
+<p><b>Choose the correct XML syntax.</b></p>
+
+<pre>
+A. &lt;note&gt;&lt;to&gt;User&lt;/to&gt;&lt;from&gt;Admin&lt;/from&gt;
+
+B. &lt;note&gt;
+   &lt;to&gt;User&lt;/to&gt;
+   &lt;from&gt;Admin&lt;/from&gt;
+   &lt;/note&gt;
+
+C. &lt;note&gt;&lt;to&gt;User&lt;/from&gt;&lt;/note&gt;
+
+D. &lt;note to="User"&gt;&lt;/note
+</pre>
+
+<div class="answer">
+
+<b>Correct Answer:</b> Option B
+
+<ul>
+
+<li>A → Missing closing &lt;/note&gt;</li>
+
+<li>B → Properly opened and closed tags ✔</li>
+
+<li>C → Closing tag mismatch</li>
+
+<li>D → Missing > in closing tag</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<!-- Question 5 -->
+
+<div class="card">
+
+<h2>Question 5 - Web Protocol</h2>
+
+<p><b>Choose the protocol used between browser and server.</b></p>
+
+<div class="options">
+
+<div>FTP</div>
+
+<div class="correct">HTTP</div>
+
+<div>SMTP</div>
+
+<div>SNMP</div>
+
+</div>
+
+<div class="answer">
+
+<b>Answer:</b> HTTP
+
+<br><br>
+
+HTTP (HyperText Transfer Protocol) is used for communication between web browsers and web servers.
+
+</div>
+
+<h3 style="margin-top:20px;text-align:center;">
+
+Browser ➜ HTTP ➜ Web Server
+
+</h3>
+
+</div>
+
+<!-- Summary -->
+
+<div class="card">
+
+<h2>Summary</h2>
+
+<table>
+
+<tr>
+
+<th>Question</th>
+
+<th>Answer</th>
+
+</tr>
+
+<tr>
+
+<td>Video Tag</td>
+
+<td>&lt;video&gt;</td>
+
+</tr>
+
+<tr>
+
+<td>Form Method</td>
+
+<td>POST</td>
+
+</tr>
+
+<tr>
+
+<td>Navigation</td>
+
+<td>&lt;nav&gt;</td>
+
+</tr>
+
+<tr>
+
+<td>XML</td>
+
+<td>Option B</td>
+
+</tr>
+
+<tr>
+
+<td>Protocol</td>
+
+<td>HTTP</td>
+
+</tr>
+
+</table>
+
+</div>
+
+</body>
+</html>
