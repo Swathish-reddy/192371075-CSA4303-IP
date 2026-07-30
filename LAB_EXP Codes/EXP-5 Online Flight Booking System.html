@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>SkyJet Airways | Online Flight Reservation System</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:"Segoe UI",sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#eef6ff;
+color:#222;
+}
+
+header{
+position:fixed;
+top:0;
+width:100%;
+padding:18px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:#0B1F3A;
+z-index:999;
+}
+
+.logo{
+font-size:30px;
+font-weight:bold;
+color:#00E5FF;
+}
+
+nav a{
+text-decoration:none;
+color:white;
+margin:0 16px;
+font-weight:600;
+transition:.3s;
+}
+
+nav a:hover{
+color:#00E5FF;
+}
+
+.btn{
+padding:12px 24px;
+border:none;
+border-radius:30px;
+background:#00C9FF;
+color:#fff;
+font-weight:bold;
+cursor:pointer;
+transition:.3s;
+}
+
+.btn:hover{
+transform:translateY(-3px);
+background:#009FD9;
+}
+
+.hero{
+height:100vh;
+background:url("https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1600") center/cover;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
+
+.overlay{
+background:rgba(0,0,0,.55);
+padding:60px;
+border-radius:20px;
+color:white;
+max-width:850px;
+}
+
+.hero h1{
+font-size:58px;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:20px;
+line-height:32px;
+margin-bottom:30px;
+}
+
+section{
+padding:90px 8%;
+}
+
+.title{
+text-align:center;
+font-size:42px;
+color:#0B1F3A;
+margin-bottom:45px;
+}
+
+.search{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:18px;
+}
+
+.search input,.search select{
+padding:15px;
+border:1px solid #ccc;
+border-radius:8px;
+font-size:16px;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.card{
+background:white;
+padding:30px;
+border-radius:15px;
+box-shadow:0 10px 25px rgba(0,0,0,.12);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+.card h2{
+color:#0B1F3A;
+margin-bottom:18px;
+}
+
+.card ul{
+padding-left:20px;
+}
+
+.card li{
+margin:10px 0;
+}
+
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+.stat{
+background:#0B1F3A;
+color:white;
+padding:35px;
+border-radius:15px;
+text-align:center;
+}
+
+.stat h1{
+font-size:48px;
+color:#00E5FF;
+}
+
+.contact{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+}
+
+.contact form{
+background:white;
+padding:30px;
+border-radius:15px;
+box-shadow:0 10px 20px rgba(0,0,0,.1);
+}
+
+.contact input,
+.contact textarea{
+width:100%;
+padding:15px;
+margin:12px 0;
+border:1px solid #ccc;
+border-radius:8px;
+}
+
+footer{
+background:#111;
+color:white;
+text-align:center;
+padding:35px;
+}
+
+@media(max-width:900px){
+
+nav{
+display:none;
+}
+
+.hero h1{
+font-size:40px;
+}
+
+.contact{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">✈ SkyJet Airways</div>
+
+<nav>
+
+<a href="#">Home</a>
+<a href="#search">Search Flights</a>
+<a href="#services">Services</a>
+<a href="#admin">Admin</a>
+<a href="#contact">Contact</a>
+
+</nav>
+
+<button class="btn">Login</button>
+
+</header>
+
+<div class="hero">
+
+<div class="overlay">
+
+<h1>Online Flight Reservation System</h1>
+
+<p>
+Search flights, compare fares, choose your preferred seat, make secure payments,
+manage bookings, and download e-tickets with a seamless airline booking experience.
+</p>
+
+<button class="btn">Book Flight</button>
+
+</div>
+
+</div>
+
+<section>
+
+<h1 class="title">SkyJet Network</h1>
+
+<div class="stats">
+
+<div class="stat">
+<h1>350+</h1>
+<p>Daily Flights</p>
+</div>
+
+<div class="stat">
+<h1>120+</h1>
+<p>Destinations</p>
+</div>
+
+<div class="stat">
+<h1>99.2%</h1>
+<p>On-Time Performance</p>
+</div>
+
+<div class="stat">
+<h1>24×7</h1>
+<p>Customer Support</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="search">
+
+<h1 class="title">Search Flights</h1>
+
+<div class="search">
+
+<input type="text" placeholder="From">
+
+<input type="text" placeholder="To">
+
+<input type="date">
+
+<select>
+<option>Economy</option>
+<option>Premium Economy</option>
+<option>Business</option>
+<option>First Class</option>
+</select>
+
+<select>
+<option>1 Passenger</option>
+<option>2 Passengers</option>
+<option>3 Passengers</option>
+<option>4 Passengers</option>
+</select>
+
+<button class="btn">Search Flights</button>
+
+</div>
+
+</section>
+
+<section id="services">
+
+<h1 class="title">Passenger Services</h1>
+
+<div class="cards">
+
+<div class="card">
+
+<h2>👤 User Portal</h2>
+
+<ul>
+<li>User Registration</li>
+<li>Administrator/User Login</li>
+<li>Forgot Password</li>
+<li>Search Flights</li>
+<li>Real-Time Seat Availability</li>
+<li>Book Flight Tickets</li>
+<li>Select Preferred Seats</li>
+<li>Passenger Details</li>
+<li>Secure Online Payment</li>
+<li>Email Confirmation with E-Ticket</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h2>🎫 My Booking</h2>
+
+<ul>
+<li>My Tickets</li>
+<li>Booking History</li>
+<li>Travel Itinerary</li>
+<li>View Booking Status</li>
+<li>Print Ticket</li>
+<li>Cancel Ticket</li>
+<li>Refund Status</li>
+<li>Download Invoice</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h2>✈ Flight Information</h2>
+
+<ul>
+<li>Flight Schedule</li>
+<li>Available Seats</li>
+<li>Flight Fare Details</li>
+<li>Flight Duration</li>
+<li>Departure Gate</li>
+<li>Arrival Terminal</li>
+<li>Boarding Time</li>
+<li>Flight Notifications</li>
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h1 class="title">Customer Support</h1>
+
+<div class="cards">
+
+<div class="card">
+
+<h2>💳 Ticket Payment</h2>
+
+<ul>
+<li>UPI</li>
+<li>Debit Card</li>
+<li>Credit Card</li>
+<li>Net Banking</li>
+<li>Digital Wallet</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h2>⭐ Customer Feedback</h2>
+
+<ul>
+<li>Rate Your Journey</li>
+<li>Service Reviews</li>
+<li>Cabin Experience</li>
+<li>Food Feedback</li>
+<li>Support Rating</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h2>📄 Booking Status</h2>
+
+<ul>
+<li>Confirmed</li>
+<li>Waiting</li>
+<li>Cancelled</li>
+<li>Refund Initiated</li>
+<li>Completed Journey</li>
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="admin">
+
+<h1 class="title">Administrator Dashboard</h1>
+
+<div class="cards">
+
+<div class="card">
+
+<h2>🛫 Flight Management</h2>
+
+<ul>
+<li>Add Flights</li>
+<li>Update Flight Schedule</li>
+<li>Manage Seat Inventory</li>
+<li>Flight Fare Management</li>
+<li>Aircraft Information</li>
+<li>Destination Management</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h2>👥 User Management</h2>
+
+<ul>
+<li>Registered Users</li>
+<li>Manage Bookings</li>
+<li>Cancel Reservations</li>
+<li>Customer Feedback</li>
+<li>Password Management</li>
+<li>Email Notifications</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h2>📊 Admin Reports</h2>
+
+<ul>
+<li>Daily Bookings</li>
+<li>Revenue Reports</li>
+<li>Flight Occupancy</li>
+<li>Passenger Statistics</li>
+<li>Cancellation Reports</li>
+<li>Payment Reports</li>
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<h1 class="title">Contact SkyJet</h1>
+
+<div class="contact">
+
+<div>
+
+<h2>SkyJet Airways Support</h2><br>
+
+<p>📍 Chennai, Tamil Nadu</p><br>
+
+<p>📞 +91 9876543210</p><br>
+
+<p>📧 support@skyjetairways.com</p><br>
+
+<p>🕒 24×7 Customer Care</p>
+
+</div>
+
+<form>
+
+<input type="text" placeholder="Full Name">
+
+<input type="email" placeholder="Email Address">
+
+<input type="text" placeholder="Subject">
+
+<textarea rows="6" placeholder="Write your message"></textarea>
+
+<button class="btn">Send Message</button>
+
+</form>
+
+</div>
+
+</section>
+
+<footer>
+
+<h2>✈ SkyJet Airways Reservation System</h2>
+
+<p style="margin-top:15px;">
+Internet Programming Laboratory Project
+</p>
+
+<p style="margin-top:10px;">
+© 2026 SkyJet Airways. All Rights Reserved.
+</p>
+
+</footer>
+
+<script>
+
+document.querySelectorAll(".btn").forEach(button=>{
+
+button.onclick=function(){
+
+alert("Demo Flight Reservation System\nBackend can be connected using PHP, Java, JSP, Servlet, Node.js, ASP.NET, or MySQL.");
+
+};
+
+});
+
+</script>
+
+</body>
+</html>
